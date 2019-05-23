@@ -47,6 +47,29 @@ public class MultiActivity extends AppCompatActivity {
         mAdapter = new MultiAdapter(beanList);
         mRecyclerView.setAdapter(mAdapter);
 
+        /////////////////////////////////////////////
+//        selectBeanList.clear();
+//
+//        for (int i = 0; i < beanList.size(); i++) {
+//            mAdapter.isSelected.put(i, true);
+//            selectBeanList.add(beanList.get(i));
+//        }
+//        mAdapter.notifyDataSetChanged();
+//        mTvCount.setText("已选中" + selectBeanList.size() + "项");
+
+        selectBeanList.clear();
+
+        for (int i = 0; i < beanList.size(); i++) {
+            mAdapter.isSelected.put(5, true);
+            selectBeanList.add(beanList.get(5));
+        }
+        mAdapter.notifyDataSetChanged();
+        mTvCount.setText("已选中" + selectBeanList.size() + "项");
+
+        /////////////////////////////////////////////
+
+
+
 //        mAdapter.setOnItemClickLitener(new OnItemClickLitener() {
 //            @Override
 //            public void onItemClick(View view, int position) {
@@ -82,7 +105,7 @@ public class MultiActivity extends AppCompatActivity {
                     mAdapter.notifyItemChanged(position);
                     selectBeanList.remove(beanList.get(position));
                 }
-                mTvCount.setText("已选中" + selectBeanList.size() + "项" + selectBeanList.toString());
+                mTvCount.setText("已选中" + selectBeanList.size() + "项");
             }
 
             @Override
@@ -116,7 +139,7 @@ public class MultiActivity extends AppCompatActivity {
             selectBeanList.add(beanList.get(i));
         }
         mAdapter.notifyDataSetChanged();
-        mTvCount.setText("已选中" + selectBeanList.size() + "项" + selectBeanList.toString());
+        mTvCount.setText("已选中" + selectBeanList.size() + "项");
     }
 
     /**
@@ -149,7 +172,7 @@ public class MultiActivity extends AppCompatActivity {
             }
         }
         mAdapter.notifyDataSetChanged();
-        mTvCount.setText("已选中" + selectBeanList.size() + "项" + selectBeanList.toString());
+        mTvCount.setText("已选中" + selectBeanList.size() + "项");
 
     }
 
@@ -176,7 +199,7 @@ public class MultiActivity extends AppCompatActivity {
             }
         }
         mAdapter.notifyDataSetChanged();
-        mTvCount.setText("已选中" + selectBeanList.size() + "项" + selectBeanList.toString());
+        mTvCount.setText("已选中" + selectBeanList.size() + "项");
     }
 
     /**
@@ -200,8 +223,16 @@ public class MultiActivity extends AppCompatActivity {
 //        }
 
         beanList = new ArrayList<>();
-        for (int i = 0; i < 20; i++) {
-            beanList.add(new JavaBean(i, R.mipmap.ic_launcher, "第" + i + "个"));
+//        for (int i = 0; i < 50; i++) {
+//            if (i % 2 == 0) {
+//                beanList.add(new JavaBean(i, R.mipmap.ic_launcher, "第" + i + "个"));
+//            }else {
+//                beanList.add(new JavaBean(i, R.drawable.icon_user_normal, "第" + i + "个"));
+//            }
+//        }
+
+        for (int i = 0; i < 30; i++) {
+            beanList.add(new JavaBean(i, R.drawable.icon_user_normal, "第" + i + "个"));
         }
     }
 }
